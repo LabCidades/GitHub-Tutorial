@@ -22,6 +22,8 @@ Instalação:
 * Pushs
   * `git push -u origin main`
 * Logs
+  * `HEAD`, `HEAD~` e `HEAD~{n}`
+  * `git diff`
   * `git status`
   * `git log` e `git log --graph`
 * Branches
