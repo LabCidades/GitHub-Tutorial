@@ -1,7 +1,35 @@
 # GitHub Tutorial
+Tutorial para os Alunos da UNINOVE
 
+## Setup
+
+Instalação:
+ * MacOS: `brew install git`
+ * Linux: `sudo apt-get install git`
+ * Windows: `choco install git`
+
+## Comandos
+
+* Configuração
+  * `git config --global user.name "[Nome Sobrenome]"`
+  * `git config --global user.email "[email valido]"`
+* Pulls/Forks
+  * `git clone`
+  * `git pull`
 * Commits
+  * `git add arquivos` ou `git add .`
+  * `git commit -m "Mensagem do Commit"`
+* Pushs
+  * `git push -u origin main`
+* Logs
+  * `git status`
+  * `git log` e `git log --graph`
 * Branches
-* Forks
+  * `git branch` e `git branch [nome-do-branch]`
+  * `git checkout [nome-do-branch]`
+* Reset
+  * `git reset --soft` versus `git reset --hard`
 * Pull Requests
+  * `git push -u origin [nome-do-branch]`
 * Merging no Master/Main
+* GitHub Actions
