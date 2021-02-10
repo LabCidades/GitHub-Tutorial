@@ -1,6 +1,8 @@
 # GitHub Tutorial
 Tutorial para os Alunos da UNINOVE
 
+[Cheatsheet GitHub em Português](https://training.github.com/downloads/pt_BR/github-git-cheat-sheet/) - [PDF](https://training.github.com/downloads/pt_BR/github-git-cheat-sheet.pdf)
+
 ## Setup
 
 Instalação:
