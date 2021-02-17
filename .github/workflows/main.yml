@@ -12,7 +12,7 @@ jobs:
   test-case-gradient-descent:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/test-case-gradient-descent@v1
+      - uses: actions/checkout@v2
       - name: Running a test case  
         run: |
           echo "Running the test case [Gradient descent]"
