@@ -3,88 +3,20 @@
 name: CI
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches: [ estudo-de-caso ]
+    paths: [ '**.ipynb' ]
+    
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 jobs:
-  build-cpp:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Building C++
-        run: echo Building C++
-      - name: Run a multi-line script
-        run: |
-          echo Building hello_world.cpp
-          g++ hello_world.cpp -o hello_world
-          ./hello_world
-          echo OK!
   build-python:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Building Python
-        run: echo Building Python
-      - name: Run a multi-line script
+      - uses: actions/get-changed-files@v1
+      - name: Running a test case  
         run: |
-          echo Building hello_world.py
-          python3 hello_world.py
-          echo OK!
-  build-julia:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Building Julia
-        run: echo Building Julia
-      - name: Run a multi-line script
-        run: |
-          echo Building hello_world.jl
-          julia hello_world.jl
-          echo OK!
-  build-js:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Building JavaScript
-        run: echo Building JavaScript
-      - name: Run a multi-line script
-        run: |
-          echo Building hello_world.js
-          node hello_world.js
-          echo OK!
-  build-java:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Building Java
-        run: echo Building Java
-      - name: Run a multi-line script
-        run: |
-          echo Building hello_world.java
-          javac hello_world.java
-          java HelloWorld
-          echo OK!
-  build-R:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Building R
-        run: echo Building R
-      - name: Run a multi-line script
-        run: |
-          echo Building hello_world.R
-          Rscript hello_world.R
-          echo OK!
-  build-go:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Building Go
-        run: echo Building Go
-      - name: Run a multi-line script
-        run: |
-          echo Building hello_world.go
-          go run hello_world.go
-          echo OK!
+          echo Running the test case [Gradient descent]  
+          mapfile -d ',' -t added_modified_files < <(printf '%s,' '${{ steps.files.outputs.added_modified }}')
+          for added_modified_file in "${added_modified_files[@]}"; do        
+            python3 cat_ipynb.py ${added_modified_file} > ${added_modified_file}__.py
+          done
