@@ -4,19 +4,15 @@ name: CI
 on:
   push:
     branches: [ estudo-de-caso ]
-    
+    paths: [ '**.ipynb' ]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 jobs:
   test-case-gradient-descent:
     runs-on: ubuntu-latest
     steps:
-      - uses: jitterbit/get-changed-files@v1
       - uses: actions/checkout@v2
       - name: Running a test case  
         run: |
           echo "Running the test case [Gradient descent]"
-          for changed_file in ${{ steps.files.outputs.all }}; do
-            echo "Do something with this ${changed_file}."
-          done
-          echo "finish..."          
+          python3 cat_ipynb.py      
