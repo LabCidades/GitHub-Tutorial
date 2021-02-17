@@ -19,5 +19,4 @@ jobs:
           mapfile -d ',' -t added_modified_files < <(printf '%s,' '${{ steps.files.outputs.added_modified }}')
           for added_modified_file in "${added_modified_files[@]}"; do        
             echo "Processing the file ${added_modified_file} "  
-            python3 cat_ipynb.py ${added_modified_file} > ${added_modified_file}__.py
           done
