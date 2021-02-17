@@ -18,7 +18,6 @@ jobs:
       - name: Running a test case  
         run: |
           echo "Running the test case [Gradient descent]"
-          mapfile -d ',' -t added_modified_files < <(printf '%s,' '${{ steps.files.outputs.added_modified }}')
-          for added_modified_file in "${added_modified_files[@]}"; do        
-            echo "Processing the file ${added_modified_file} "  
+          for changed_file in ${{ steps.files.outputs.all }}; do
+            echo "Do something with this ${changed_file}."
           done
