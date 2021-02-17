@@ -12,7 +12,7 @@ jobs:
   test-case-gradient-descent:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: jitterbit/get-changed-files@v1
       - name: Running a test case  
         run: |
           echo "Running the test case [Gradient descent]"
