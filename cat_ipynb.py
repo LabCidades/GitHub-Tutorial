@@ -2,10 +2,24 @@
 import sys
 import json
 
-for file in sys.argv[1:]:
+from os import chdir, getcwd, listdir
+from os.path import isfile
+files = []
+
+chdir("./")
+print(getcwd())
+
+for c in listdir():
+    if isfile(c):
+    	if c.endswith(".ipynb"):
+        	print(c)
+
+
+
+for file in files:
     print('# file: %s' % file)
     print('# vi: filetype=python')
-    print('') 
+    print('')
     code = json.load(open(file))
 
     for cell in code['cells']:
