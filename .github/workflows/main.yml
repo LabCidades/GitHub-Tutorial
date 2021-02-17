@@ -4,7 +4,6 @@ name: CI
 on:
   push:
     branches: [ estudo-de-caso ]
-    paths: [ '**.ipynb' ]
     
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -16,6 +15,6 @@ jobs:
       - name: Running a test case  
         run: |
           echo "Running the test case [Gradient descent]"
-          for changed_file in ${{ steps.files.outputs.all }}; do
+          for changed_file in ${{ steps.files.outputs.added_modified }}; do
             echo "Do something with this ${changed_file}."
           done
