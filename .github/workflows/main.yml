@@ -9,14 +9,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 jobs:
-  build-python:
+  test-case-gradient-descent:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/get-changed-files@v1
+      - uses: actions/test-case-gradient-descent@v1
       - name: Running a test case  
         run: |
-          echo Running the test case [Gradient descent]  
-          mapfile -d ',' -t added_modified_files < <(printf '%s,' '${{ steps.files.outputs.added_modified }}')
-          for added_modified_file in "${added_modified_files[@]}"; do        
-            python3 cat_ipynb.py ${added_modified_file} > ${added_modified_file}__.py
-          done
+          echo "Running the test case [Gradient descent]"
