@@ -33,5 +33,11 @@ jobs:
       - name: Creating a test report 
         run: |
           echo "Creating a test report" 
+          mkdir -p ~/new/artifact
           python testcase2.py > results.txt
           cat results.txt
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: ~/new/artifact/results.txt
