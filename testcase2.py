@@ -117,4 +117,4 @@ for file in listdir():
         	], ignore_index=True)
 			#
 
-print("\n\n",df, "\n")   
+print(df)   
