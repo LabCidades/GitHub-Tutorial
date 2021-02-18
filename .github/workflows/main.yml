@@ -10,6 +10,11 @@ on:
 jobs:
   test-case-gradient-descent:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GH_TOKEN }}
+      ORCID_CLIENT_ID: ${{ secrets.ORCID_CLIENT_ID }}
+      ORCID_CLIENT_SECRET: ${{ secrets.ORCID_CLIENT_SECRET }}
+      ORCID_TOKEN: ${{ secrets.ORCID_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python
@@ -45,3 +50,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           branch: estudo-de-caso
+          github_token: ${{ secrets.GITHUB_TOKEN }}
