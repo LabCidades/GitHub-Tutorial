@@ -34,4 +34,3 @@ jobs:
         run: |
           echo "Creating a test report 
           python testcase2.py
-          cat results.txt
