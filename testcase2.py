@@ -112,4 +112,4 @@ for file in listdir():
         	'test_predicao':t_predicao}
         	], ignore_index=True)
 
-print(df)   
+df.to_html("results.html")   
