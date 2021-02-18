@@ -29,4 +29,4 @@ jobs:
       - name: Running a test case  
         run: |
           echo "Running the test case [Gradient descent]"
-          python3 testcase.py      
+          pytest -v testcase.py      
