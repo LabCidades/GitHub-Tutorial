@@ -1,0 +1,6 @@
+                                      Files  ... test_predicao
+0  Exercicios_Regressao_Linear-Carlos.ipynb  ...          PASS
+1   Exercicios_Regressao_Linear-Pedro.ipynb  ...          FAIL
+2         Exercicios_Regressao_Linear.ipynb  ...          PASS
+
+[3 rows x 5 columns]
