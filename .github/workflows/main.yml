@@ -33,4 +33,5 @@ jobs:
       - name: Creating a test report 
         run: |
           echo "Creating a test report" 
-          python testcase2.py
+          python testcase2.py > results.txt
+          cat results.txt
