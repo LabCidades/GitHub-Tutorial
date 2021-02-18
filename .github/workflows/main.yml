@@ -32,5 +32,5 @@ jobs:
           pytest -v testcase.py 
       - name: Creating a test report 
         run: |
-          echo "Creating a test report 
+          echo "Creating a test report" 
           python testcase2.py
