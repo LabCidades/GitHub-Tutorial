@@ -15,4 +15,4 @@ jobs:
       - name: Running a test case  
         run: |
           echo "Running the test case [Gradient descent]"
-          python3 cat_ipynb.py      
+          python3 testcase.py      
