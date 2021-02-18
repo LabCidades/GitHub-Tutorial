@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import sys
-import json
+import simplejson as json
 import numpy as np
 import pandas as pd
 
