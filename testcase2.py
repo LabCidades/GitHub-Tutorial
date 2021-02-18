@@ -118,10 +118,5 @@ for file in listdir():
         	'test_predicao':t_predicao}
         	], ignore_index=True)
 			#
-			
-def color_negative_red(val):
-    color = 'red' if val == "FAIL" else 'blue'
-    return 'color: %s' % color
-    
-df.style.apply(color_negative_red)
+
 df.to_html("./results.html")    
