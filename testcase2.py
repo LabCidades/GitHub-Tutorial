@@ -42,14 +42,12 @@ def test_zscore():
     Xdados_true = np.copy(Xdados2)
     Xdados_true, mean_true, std_true = zscore_true(Xdados_true, bias=True)
         
-    #Testando a função zscore
     np.testing.assert_array_equal(mean_true, mean_)
     np.testing.assert_array_equal(std_true, std_)
     np.testing.assert_array_equal(Xdados_true, Xdados2T)
 
         
 def test_funcaoCusto():
-      # Testando sua função custo
     Xdados1T = np.copy(Xdados1)
     Xdados1T, mean_, std_ = zscore_true(Xdados1T, bias=True)
     thetasTeste = np.array([1.0647, 0.1106])
@@ -58,7 +56,6 @@ def test_funcaoCusto():
 
 def test_derivadaDaFuncaoCusto():    
     
-    # Testando sua função derivadaDaFuncaoCusto
     Xdados1T = np.copy(Xdados1)
     Xdados1T, mean_, std_ = zscore_true(Xdados1T, bias=True)
     thetasTeste = np.array([0.827225, 0.085157])
@@ -68,7 +65,6 @@ def test_derivadaDaFuncaoCusto():
     
 def test_predicao():    
 
-    #Testando a funcao predicao	
     thetasTeste = np.array([0.827225, 0.085157])
     x = np.array([1, 3.5])
     p = predicao(x, thetasTeste)
@@ -115,6 +111,5 @@ for file in listdir():
         	'test_derivadaDaFuncaoCusto': t_derivadaDaFuncaoCusto,
         	'test_predicao':t_predicao}
         	], ignore_index=True)
-			#
 
 print(df)   
