@@ -1,3 +1,3 @@
 //console.log
 
-consoe.log("Hello, World!");
+console.log("Hello, World!");

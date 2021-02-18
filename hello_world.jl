@@ -1,3 +1,3 @@
 # println
 
-pritln("Hello World")
+println("Hello World")
