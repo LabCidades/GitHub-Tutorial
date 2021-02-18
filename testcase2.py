@@ -117,4 +117,4 @@ for file in listdir():
         	], ignore_index=True)
 			#
 
-print(df.to_html())   
+print("\n\n",df, "\n")   
