@@ -38,13 +38,13 @@ jobs:
       - name: Creating a test report and Commit files
         run: |
           echo "Creating a test report" 
-          python testcase2.py > results.txt
-          cat results.txt
+          python testcase2.py
+          cat results.html
           git config --local core.autocrlf false
           git config --local user.email "${{ github.actor }}@users.noreply.github.com"
           git config --local user.name "${{ github.actor }}"
-          git add results.txt
-          git commit -m "updated test report" results.txt 
+          git add results.html
+          git commit -m "updated test report" results.html
           NO_PAGER=1 git --no-pager diff HEAD^
       - name: Push changes
         uses: ad-m/github-push-action@master
