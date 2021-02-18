@@ -38,7 +38,6 @@ def zscore_true(X, mean=None, std=None, bias=False):
 def test_zscore():    	
     Xdados2T = np.copy(Xdados2)
     Xdados2T, mean_, std_ = zscore(Xdados2T, bias=True)
-    m = np.size(Xdados2, 0)    
 
     Xdados_true = np.copy(Xdados2)
     Xdados_true, mean_true, std_true = zscore_true(Xdados_true, bias=True)
@@ -65,7 +64,6 @@ def test_derivadaDaFuncaoCusto():
     thetasTeste = np.array([0.827225, 0.085157])
     d = derivadaDaFuncaoCusto(Xdados1T, Ydados1, mdados1, thetasTeste)
     d_true = np.array([-0.237455, -0.02430041])
-    print(abs(d[0] - d_true[0]))
     assert abs(d[0] - d_true[0]) < 0.0001 and abs(d[1] - d_true[1]) < 0.0001
     
 def test_predicao():    
@@ -119,4 +117,4 @@ for file in listdir():
         	], ignore_index=True)
 			#
 
-df.to_html("./results.html")    
+print(df.to_html())   
