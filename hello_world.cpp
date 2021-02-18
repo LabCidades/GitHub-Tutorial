@@ -1,11 +1,13 @@
 // iostream
 // "Hello World";
 
-#include <iotream>
+#include <iostream>
 #include <string>
 
-std::string hello = "Hello, World!"
+std::string hello = "Hello, World!";
 
-int main(){
-    std::cout << hello << "\n";
+int main() {
+	std::cout << hello << "\n";
+	return 0;
 }
+
