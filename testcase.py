@@ -12,7 +12,7 @@ chdir("./")
 
 for file in listdir():
     if isfile(file):
-    	if file.endswith(".ipynb"):# and not file.endswith("solucao.ipynb"):
+    	if file.endswith(".ipynb") and not file.endswith("solucao.ipynb"):
         	files = files + [file]
 
 
