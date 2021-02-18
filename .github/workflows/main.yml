@@ -30,7 +30,7 @@ jobs:
         run: |
           echo "Running the test case [Gradient descent]"
           pytest -v testcase.py 
-      - name: Creating a test report in html
+      - name: Creating a test report 
         run: |
-          echo "Creating a test report in html"
-          python testcase2.py > results.html
+          echo "Creating a test report 
+          python testcase2.py 
