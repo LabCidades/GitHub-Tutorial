@@ -33,4 +33,4 @@ jobs:
       - name: Creating a test report in html
         run: |
           echo "Creating a test report in html"
-          python testcase2.py 
+          python testcase2.py > results.html
