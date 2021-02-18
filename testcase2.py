@@ -111,5 +111,3 @@ for file in listdir():
         	'test_derivadaDaFuncaoCusto': t_derivadaDaFuncaoCusto,
         	'test_predicao':t_predicao}
         	], ignore_index=True)
-
-df.to_html("results.html")
