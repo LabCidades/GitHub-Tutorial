@@ -70,11 +70,10 @@ def test_derivadaDaFuncaoCusto():
     thetasTeste = np.array([0.827225, 0.085157])
     d = derivadaDaFuncaoCusto(Xdados1T, Ydados1, mdados1, thetasTeste)
     d_true = np.array([-0.237455, -0.02430041])
-    print(abs(d[0] - d_true[0]))
+    #print(abs(d[0] - d_true[0]))
     assert abs(d[0] - d_true[0]) < 0.0001 and abs(d[1] - d_true[1]) < 0.0001
     
 def test_predicao():    
-
     #Testando a funcao predicao	
     thetasTeste = np.array([0.827225, 0.085157])
     x = np.array([1, 3.5])
