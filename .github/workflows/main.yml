@@ -10,11 +10,6 @@ on:
 jobs:
   test-case-gradient-descent:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_PAT: ${{ secrets.GH_TOKEN }}
-      ORCID_CLIENT_ID: ${{ secrets.ORCID_CLIENT_ID }}
-      ORCID_CLIENT_SECRET: ${{ secrets.ORCID_CLIENT_SECRET }}
-      ORCID_TOKEN: ${{ secrets.ORCID_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python
@@ -35,18 +30,3 @@ jobs:
         run: |
           echo "Running the test case [Gradient descent]"
           pytest -v testcase.py 
-      - name: Creating a test report and Commit files
-        run: |
-          echo "Creating a test report" 
-          python testcase2.py
-          git config --local core.autocrlf false
-          git config --local user.email "${{ github.actor }}@users.noreply.github.com"
-          git config --local user.name "${{ github.actor }}"
-          git add results.html
-          git commit -m "updated test report" results.html
-          NO_PAGER=1 git --no-pager diff HEAD^
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          branch: estudo-de-caso
-          github_token: ${{ secrets.GITHUB_TOKEN }}
